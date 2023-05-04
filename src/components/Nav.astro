@@ -2,12 +2,13 @@
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
     { label: 'HOME', href: '/' },
-    { label: 'WORK', href: '#work-section' },
     { label: 'ABOUT', href: '#about-section' },
+    { label: 'WORK', href: '#work-section' },
 ];
 ---
 
 <nav>
+    <div class="menu-header"></div>
     <div id="menu-content">
         <ul class="nav-items">
             {
@@ -19,8 +20,8 @@ const textLinks: { label: string; href: string }[] = [
                                         'link',
                                         {
                                             active:
-                                                Astro.url.pathname === href ||
-                                                (href !== '/' && Astro.url.pathname.startsWith(href)),
+                                                Astro.url.pathname === href
+                                                 || (href !== '/' && Astro.url.pathname.startsWith(href)),
                                         },
                                     ]}
                                     href={href}
@@ -31,43 +32,109 @@ const textLinks: { label: string; href: string }[] = [
                 ))
             }
         </ul>
+        <div class="menu-footer">
+            <div class="socials">
+                {
+
+                }
+            </div>
+
+            <div class="theme-toggle">
+
+            </div>
+        </div>
     </div>
 </nav>
 
+<script>
+    class MenuButton extends HTMLElement {
+        constructor() {
+            super();
+
+            // Inject menu toggle button when JS runs.
+            this.appendChild(this.querySelector('template')!.content.cloneNode(true));
+            const btn = this.querySelector('button')!;
+
+            // Hide menu (shown by default to support no-JS browsers).
+            const menu = document.getElementById('menu-content')!;
+            menu.hidden = true;
+
+            /** Set whether the menu is currently expanded or collapsed. */
+            const setExpanded = (expand: boolean) => {
+                btn.setAttribute('aria-expanded', expand ? 'true' : 'false');
+                menu.hidden = !expand;
+            };
+
+            // Toggle menu visibility when the menu button is clicked.
+            btn.addEventListener('click', () => setExpanded(menu.hidden));
+
+            // Hide menu button for large screens.
+            const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
+                setExpanded(e.matches);
+                btn.hidden = e.matches;
+            };
+            const mediaQueries = window.matchMedia('(min-width: 50em)');
+            handleViewports(mediaQueries);
+            mediaQueries.addEventListener('change', handleViewports);
+        }
+    }
+    customElements.define('menu-button', MenuButton);
+</script>
 
 <style>
     nav {
         z-index: 9999;
         position: sticky;
         top: 0;
-        height: 5vh;
-        margin-bottom: 1vh;
-        background-color: #00ff06;
     }
 
-    #menu-content {
-        position: absolute;
-        left: 0;
-        right: 0;
-        background-color: #004bff;
+    /*.menu-header {*/
+    /*    display: flex;*/
+    /*    justify-content: space-between;*/
+    /*    gap: 0.5rem;*/
+    /*    padding: 1.5rem;*/
+    /*}*/
+
+    /*.site-title {*/
+    /*    display: flex;*/
+    /*    gap: 0.5rem;*/
+    /*    align-items: center;*/
+    /*    line-height: 1.1;*/
+    /*    color: var(--gray-0);*/
+    /*    text-decoration: none;*/
+    /*}*/
+
+    .menu-button {
+        position: relative;
+        display: flex;
+        border: 0;
+        border-radius: 999rem;
+        padding: 0.5rem;
+        font-size: 1.5rem;
     }
 
     .nav-items {
-        text-align: center;
+        background-color: #302e50;
         margin: 0;
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        font-size: var(--text-md);
         line-height: 1.2;
         list-style: none;
         padding: 2rem;
-        background-color: crimson;
     }
     .nav-items a {
+        color: #d85a31;
+    }
+
+    .link {
+        /*display: inline-block;*/
         text-decoration: none;
     }
 
+    .link.active {
+        /*color: var(--gray-0);*/
+    }
 
     @media (min-width: 50em) {
         nav {
@@ -78,18 +145,51 @@ const textLinks: { label: string; href: string }[] = [
             gap: 1rem;
         }
 
+        .menu-header {
+            padding: 0;
+        }
+
+        #menu-content {
+            display: contents;
+        }
+
         .nav-items {
             position: relative;
             flex-direction: row;
+            font-size: var(--text-sm);
+            border-radius: 999rem;
+            border: 0;
+            padding: 0.5rem 0.5625rem;
+            box-shadow: var(--shadow-md);
         }
 
-        /*.nav-items::before {*/
-        /*    position: absolute;*/
-        /*    inset: -1px;*/
-        /*    content: '';*/
-        /*    background: var(--gradient-stroke);*/
-        /*    border-radius: 999rem;*/
-        /*    z-index: -1;*/
-        /*}*/
+        .nav-items::before {
+            position: absolute;
+            inset: -1px;
+            content: '';
+            background: var(--gradient-stroke);
+            border-radius: 999rem;
+            z-index: -1;
+        }
+
+        .link {
+            padding: 0.5rem 1rem;
+            border-radius: 999rem;
+            transition: color var(--theme-transition), background-color var(--theme-transition);
+        }
+
+        .link:hover,
+        .link:focus {
+            color: var(--gray-100);
+            background-color: var(--accent-subtle-overlay);
+        }
     }
-    </style>
+
+    @media (min-width: 60em) {
+        .socials {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0;
+        }
+    }
+</style>
