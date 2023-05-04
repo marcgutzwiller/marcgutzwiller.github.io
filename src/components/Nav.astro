@@ -1,0 +1,95 @@
+---
+/** Main menu items */
+const textLinks: { label: string; href: string }[] = [
+    { label: 'HOME', href: '/' },
+    { label: 'WORK', href: '#work-section' },
+    { label: 'ABOUT', href: '#about-section' },
+];
+---
+
+<nav>
+    <div id="menu-content">
+        <ul class="nav-items">
+            {
+                textLinks.map(({ label, href }) => (
+                        <li>
+                            <a
+                                    aria-current={Astro.url.pathname === href}
+                                    class:list={[
+                                        'link',
+                                        {
+                                            active:
+                                                Astro.url.pathname === href ||
+                                                (href !== '/' && Astro.url.pathname.startsWith(href)),
+                                        },
+                                    ]}
+                                    href={href}
+                            >
+                                {label}
+                            </a>
+                        </li>
+                ))
+            }
+        </ul>
+    </div>
+</nav>
+
+
+<style>
+    nav {
+        z-index: 9999;
+        position: sticky;
+        top: 0;
+        height: 5vh;
+        margin-bottom: 1vh;
+        background-color: #00ff06;
+    }
+
+    #menu-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #004bff;
+    }
+
+    .nav-items {
+        text-align: center;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: var(--text-md);
+        line-height: 1.2;
+        list-style: none;
+        padding: 2rem;
+        background-color: crimson;
+    }
+    .nav-items a {
+        text-decoration: none;
+    }
+
+
+    @media (min-width: 50em) {
+        nav {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            padding: 2.5rem 5rem;
+            gap: 1rem;
+        }
+
+        .nav-items {
+            position: relative;
+            flex-direction: row;
+        }
+
+        /*.nav-items::before {*/
+        /*    position: absolute;*/
+        /*    inset: -1px;*/
+        /*    content: '';*/
+        /*    background: var(--gradient-stroke);*/
+        /*    border-radius: 999rem;*/
+        /*    z-index: -1;*/
+        /*}*/
+    }
+    </style>

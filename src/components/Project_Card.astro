@@ -1,0 +1,158 @@
+---
+export interface Props {
+    src:        string;
+    alt:        string;
+    title:      string;
+    reason:     string;
+    keyWord1:   string;
+    keyWord2:   string;
+    keyWord3:   string;
+    keyWord4:   string;
+    keyWord5:   string;
+    href:       string;
+    link:       string;
+}
+
+const {
+    src,
+    alt ,
+    title,
+    reason,
+    keyWord1,
+    keyWord2,
+    keyWord3,
+    keyWord4,
+    keyWord5,
+    href,
+    link
+} = Astro.props;
+---
+
+<div class="col">
+    <div class="flip-box">
+        <div class="flip-box-inner">
+            <div class="flip-box-front">
+                <img src={src} alt={alt}>
+            </div>
+            <div class="flip-box-back">
+                <h5><strong>{title}</strong></h5>
+                <hr class="Project_Card">
+                <p><strong>Reason:</strong> <br> {reason}</p>
+                <br>
+                <p><strong>Key Words:</strong> <br>
+                    <span class="badge rounded-pill">{keyWord1}</span>
+                    <span class="badge rounded-pill">{keyWord2}</span>
+                    <span class="badge rounded-pill">{keyWord3}</span>
+                    <span class="badge rounded-pill">{keyWord4}</span>
+                    <span class="badge rounded-pill">{keyWord5}</span>
+                </p>
+                <br>
+                <p><strong>Git Hub:</strong> <br> <a href={href} target="_blank">{link}</a></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 50vh;
+        border-radius: 20px;
+    }
+    .video{
+        border-radius: 25px;
+        height: 100%;
+        overflow: hidden;
+        width: 55%;
+    }
+    video{
+        position: relative;
+        left: -7%;
+        height: 45vh;
+        border-radius: 15px;
+    }
+
+    a {
+        color: #e15b38;
+    }
+
+    hr{
+        border-top: 1px solid #A9E5BB;
+        border-radius: 20px;
+        opacity: 0.3;
+        margin-top: 10vh;
+        margin-bottom: 1vh;
+    }
+    .Project_Card {
+        border-top: 1px solid #A9E5BB;
+        border-radius: 20px;
+        opacity: 0.3;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+    .col{
+        margin: 4%;
+    }
+    /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-box {
+        height: 50vh;
+        width: 20vw;
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-box-inner {
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-box:hover .flip-box-inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-box-front, .flip-box-back {
+        position: absolute;
+        height: 50vh;
+        width: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .flip-box-front {
+        /*background-color: #bbb;*/
+        color: black;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Style the back side */
+    .flip-box-back {
+        padding: 2em;
+        text-align: left;
+        font-size: 1em;
+        background-color: #141325;
+        color: #d85a31;
+        transform: rotateY(180deg);
+        border-radius: 20px;
+    }
+    .badge{
+        font-size: 0.6rem;
+        display: inline-block;
+        margin: 3px;
+        background-color: #e15b38;
+        color: #1d1c36;
+        border-radius: 5px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+</style>
