@@ -20,7 +20,7 @@
 
     <main slot="main">
         <div class = "main">
-<!--            <About/>-->
+            <About/>
             <Work/>
         </div>
     </main>
@@ -40,13 +40,6 @@
 </Layout>
 
 <style>
-
-    h1{
-        font-size: 1em;
-    }
-
-    .header{
-    }
     @media (min-width: 768px) {
         .main {
             position: relative;
@@ -57,25 +50,15 @@
             color: #d85a31;
         }
     }
-    .side1{
-        position: relative;
-        top: 200%;
-        background-color: lightgrey;
-        margin-left: 5vw;
-        margin-right: 5vw;
-    }
-    .side2{
-        position: relative;
-        top: 110%;
-        background-color: lightgrey;
-        margin-left: 5vw;
-        margin-right: 5vw;
-    }
-    .footer{
-        position: relative;
-        top: 110%;
-        background-color: lightgrey;
-        margin-left: 5vw;
-        margin-right: 5vw;
+
+    @media (max-width: 767px) {
+        .main {
+            position: relative;
+            top: 45svh;
+            left: 10vw;
+            width: 80vw;
+            text-align: center;
+            color: #d85a31;
+        }
     }
 </style>

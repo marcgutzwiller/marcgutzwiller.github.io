@@ -1,3 +1,4 @@
+
 <div id="about-section">
 
     <h1 id="about">ABOUT</h1>
@@ -20,72 +21,115 @@
         <div class="skills">
             <h5>WHAT I LIKE TO DO</h5>
             <hr>
-            <span class="badge">UI/UX DESIGN</span>
-            <span class="badge">EXTENDED REALITY</span>
-            <span class="badge">MOBILE APPS</span>
-            <span class="badge">GRAPHIC DESIGN</span>
-            <span class="badge">3D MODELLING</span>
+            <span class="badge_about">UI/UX DESIGN</span>
+            <span class="badge_about">EXTENDED REALITY</span>
+            <span class="badge_about">MOBILE APPS</span>
+            <span class="badge_about">GRAPHIC DESIGN</span>
+            <span class="badge_about">3D MODELLING</span>
         </div>
     </div>
 </div>
 
 <style>
-    h1 {
-        line-height: 1.1;
-        font-family: 'Josefin Sans', sans-serif;
-        font-size: 6vw;
-        font-weight: 200;
-        color: #d85a31;
-    }
-    h5{
-        line-height: 1.1;
-        font-family: 'Josefin Sans', sans-serif;
-        font-size: 2vw;
-        font-weight: 200;
-        color: #d85a31;
-    }
-    #about-section{
-        position: relative;
-        height: auto;
-    }
-    .badge{
-        display: inline-block;
-        padding: 10px;
-        background-color: #e15b38;
-        color: #1d1c36;
-        border-radius: 10px;
-        margin: 5px;
-    }
-    .lists{
-        position: relative;
-        height: 40vh;
-    }
-    .free-time{
-        position: absolute;
-        display: inline-block;
-        width: 40%;
-        height: 100%;
-        left: 1%;
-        margin-left: 3%;
-        text-align: left;
-    }
-    .skills{
-        position: absolute;
-        width: 40%;
-        height: 100%;
-        right: 1%;
-        margin-right: 3%;
-    }
-    ul {
-        list-style-type: circle;
-    }
-    li{
-
-    }
-    hr{
+    hr {
         border-top: 1px solid #A9E5BB;
         border-radius: 20px;
         opacity: 0.3;
-        margin: 10px;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+    }
+    @media (min-width: 768px) {
+        h1 {
+            line-height: 1.1;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 6vw;
+            font-weight: 200;
+            color: #d85a31;
+        }
+
+        h5 {
+            line-height: 1.1;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 2vw;
+            font-weight: 200;
+            color: #d85a31;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        #about-section {
+            position: relative;
+            margin-bottom: 15vw;
+        }
+
+        .badge_about {
+            display: inline-block;
+            padding: 10px;
+            background-color: #e15b38;
+            color: #1d1c36;
+            border-radius: 10px;
+            margin: 5px;
+            font-size: 1em;
+        }
+
+        .lists {
+            position: relative;
+            display: flex;
+            width: 100%;
+            gap: 10vw;
+        }
+
+        .free-time {
+            position: relative;
+            width: 90vw;
+            text-align: left;
+        }
+
+        .skills {
+            position: relative;
+        }
+    }
+
+    @media (max-width: 767px) {
+        h1 {
+            line-height: 1.1;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 3em;
+            font-weight: 200;
+            color: #d85a31;
+        }
+        h5{
+            text-align: left;
+            line-height: 1.1;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.5em;
+            font-weight: 200;
+            color: #d85a31;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        #about-section{
+            margin-bottom: 15vw;
+        }
+        .badge_about{
+            display: inline-block;
+            padding: 8px;
+            background-color: #e15b38;
+            color: #1d1c36;
+            border-radius: 8px;
+            margin: 5px;
+            font-size: 1em;
+        }
+        .lists{
+            width: 90%;
+            left: 5%;
+        }
+        .free-time{
+            text-align: left;
+            margin-bottom: 15svh;
+        }
+        .skills{
+            margin-bottom: 15svh;
+        }
     }
 </style>
