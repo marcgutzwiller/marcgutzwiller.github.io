@@ -99,9 +99,12 @@
     @media (max-width: 767px) {
 
         #landing-focus {
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+
             position: absolute;
-            top: 10px;
-            height: 35svh;
+            top: 5svh;
+            height: 90svh;
             width: 90%;
             left: 5%;
             border-radius: 10px;
@@ -118,7 +121,7 @@
             font-family: 'Josefin Sans', sans-serif;
             font-weight: 700;
             color: #d85a31;
-            font-size: 2em;
+            font-size: 2.5em;
             top: 50px;
             left: 30px;
         }
@@ -129,9 +132,9 @@
             font-weight: 700;
             z-index: 2;
             color: #e35b38;
-            font-size: 2em;
-            top: 73px;
-            left: 44.5px;
+            font-size: 2.5em;
+            top: 50px;
+            left: 70px;
         }
 
         #creative-developer {
@@ -140,9 +143,9 @@
             font-weight: 70;
             z-index: 2;
             color: #e15b38;
-            /*font-size: 1em;*/
-            top: 130px;
-            left: 65px;
+            font-size: 1.5em;
+            top: 50px;
+            left: 160px;
         }
 
         .icon-scroll,

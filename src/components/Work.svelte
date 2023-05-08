@@ -382,7 +382,7 @@
             color: #d85a31;
         }
         h5{
-            text-align: left;
+            text-align: center;
             line-height: 1.1;
             font-family: 'Josefin Sans', sans-serif;
             font-size: 1.5em;
@@ -392,6 +392,7 @@
         }
 
         .link-card-grid {
+            text-align: center;
             position: relative;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));

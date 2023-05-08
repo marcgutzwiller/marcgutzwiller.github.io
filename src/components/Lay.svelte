@@ -54,7 +54,7 @@
     @media (max-width: 767px) {
         .main {
             position: relative;
-            top: 45svh;
+            top: 105svh;
             left: 10vw;
             width: 80vw;
             text-align: center;

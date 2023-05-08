@@ -99,7 +99,7 @@
             color: #d85a31;
         }
         h5{
-            text-align: left;
+            text-align: center;
             line-height: 1.1;
             font-family: 'Josefin Sans', sans-serif;
             font-size: 1.5em;
@@ -121,7 +121,6 @@
             font-size: 1em;
         }
         .lists{
-            width: 90%;
             left: 5%;
         }
         .free-time{
@@ -129,6 +128,8 @@
             margin-bottom: 15svh;
         }
         .skills{
+            position: relative;
+            text-align: center;
             margin-bottom: 15svh;
         }
     }
