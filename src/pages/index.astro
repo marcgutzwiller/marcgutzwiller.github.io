@@ -1,61 +1,61 @@
 ---
-import Landing from '../components/Landing.astro';
-import Layout from '../layouts/BaseLayout.astro';
-import About from '../components/About.astro';
-import Work from '../components/Work.astro';
+// Component Imports
+import Lay from '../components/Lay.svelte';
 ---
 
-<Landing/>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="generator" content={Astro.generator} />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<title>Marc's Portfolio</title>
+</head>
 
-<Layout title="Marc Gutzwiller">
-	<main>
-		<About/>
-		<Work/>
-	</main>
-</Layout>
+<body>
+<video autoplay muted loop id="myVideo">
+	<source src="BG_new.mp4" type="video/mp4">
+</video>
+<Lay/>
+</body>
 
+</html>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		/*max-width: 60ch;*/
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Josefin+Sans:wght@300;700&family=Xanh+Mono&display=swap');
+	*{
+		box-sizing: border-box;
 	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
+	html,
+	body {
+		font-family: system-ui;
 		margin: 0;
-	}
-
-	.text-gradient {
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background-color: #ecdeff;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-
-	}
-	.link-card-grid {
-		width: 50%;
-		position: relative;
-		margin: auto;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
 		padding: 0;
+		background-color: #030003;
+	}
+	body {
+
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		line-height: 1.1;
+		font-family: 'Josefin Sans', sans-serif;
+		font-weight: 200;
+		color: #d85a31;
+	}
+	#myVideo {
+		position: fixed;
+		opacity: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		/*height: 100vh;*/
+		min-width: 100vw;
+		/*min-height: 100%;*/
+		min-height: 100vh;
 	}
 </style>

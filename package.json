@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.3.2"
+    "@astrojs/svelte": "^2.1.1",
+    "astro": "^2.4.2",
+    "svelte": "^3.59.0",
+    "svelte-fluid-layout": "^0.2.0"
   }
 }
