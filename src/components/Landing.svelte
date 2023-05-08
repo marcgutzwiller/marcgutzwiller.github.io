@@ -23,7 +23,7 @@
             -webkit-backdrop-filter: blur(10px);
             border-top: 2px solid rgba(148, 165, 217, 0.3);
             border-left: 2px solid rgba(148, 165, 217, 0.3);
-            box-shadow: 20px 20px 20px rgba(9, 9, 9, 0.3);
+            box-shadow: 20px 20px 20px rgba(9, 9, 9, 0.1);
 
         }
 
