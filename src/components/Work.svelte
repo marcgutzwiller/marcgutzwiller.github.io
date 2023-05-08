@@ -264,6 +264,7 @@
             font-size: 2vw;
             font-weight: 200;
             color: #d85a31;
+            margin: 0;
         }
 
         .work-section {
@@ -313,9 +314,10 @@
         /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
         .flip-box {
             height: 50vh;
-            width: 20vw;
+            width: 100%;
             perspective: 1000px; /* Remove this if you don't want the 3D effect */
-            margin-bottom: 5vh;
+            margin-bottom: 70px;
+            margin-top: 30px;
         }
 
         /* This container is needed to position the front and back side */
@@ -343,7 +345,6 @@
 
         /* Style the front side (fallback if image is missing) */
         .flip-box-front {
-            /*background-color: #bbb;*/
             color: black;
             display: block;
             margin-left: auto;
@@ -355,14 +356,19 @@
             padding: 2em;
             text-align: left;
             font-size: 1em;
-            background-color: #141325;
             color: #d85a31;
             transform: rotateY(180deg);
             border-radius: 20px;
-            width: 80%;
+
+            background: linear-gradient(rgba(61, 70, 99, 0.1), rgba(29, 28, 54, 0.1));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 2px solid rgba(148, 165, 217, 0.3);
+            border-left: 2px solid rgba(148, 165, 217, 0.3);
+            box-shadow: 20px 20px 20px rgba(9, 9, 9, 0.1);
         }
         .badge {
-            font-size: 0.6rem;
+            /*font-size: 0.6rem;*/
             display: inline-block;
             margin: 3px;
             background-color: #e15b38;
@@ -370,6 +376,11 @@
             border-radius: 5px;
             padding-left: 8px;
             padding-right: 8px;
+        }
+        br{
+            content: "";
+            display: block;
+            height: 1px;
         }
     }
 
@@ -463,11 +474,17 @@
             padding: 2em;
             text-align: left;
             font-size: 1em;
-            background-color: #141325;
             color: #d85a31;
             transform: rotateY(180deg);
             border-radius: 20px;
             width: 80%;
+
+            background: linear-gradient(rgba(61, 70, 99, 0.1), rgba(29, 28, 54, 0.1));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 2px solid rgba(148, 165, 217, 0.3);
+            border-left: 2px solid rgba(148, 165, 217, 0.3);
+            box-shadow: 20px 20px 20px rgba(9, 9, 9, 0.1);
         }
         .badge {
             font-size: 0.8em;
