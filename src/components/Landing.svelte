@@ -152,23 +152,23 @@
         .icon-scroll:before {
             position: absolute;
             left: 50%;
-            bottom: 2vw;
+            bottom: 20px;
         }
 
         .icon-scroll {
-            width: 2vw;
-            height: 4vw;
+            width: 15px;
+            height: 35px;
             box-shadow: inset 0 0 0 3px rgba(57, 57, 57, 0.8);
             border-radius: 25px;
         }
 
         .icon-scroll:before {
             content: '';
-            width: 1vw;
-            height: 1vw;
+            width: 6px;
+            height: 6px;
             background: rgb(207, 89, 42);
-            margin-left: -0.5vw;
-            top: 0.5vw;
+            margin-left: -3px;
+            top: 6px;
             border-radius: 50%;
             animation-duration: 1.5s;
             animation-iteration-count: infinite;
@@ -181,7 +181,7 @@
             }
             100% {
                 opacity: 0;
-                transform: translateY(2vw);
+                transform: translateY(15px);
             }
         }
     }

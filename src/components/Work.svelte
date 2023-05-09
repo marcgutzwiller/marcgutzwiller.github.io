@@ -239,6 +239,7 @@
         </div>
     </div>
     <!--3d renders-------------------------------------------------------------------------------------------------------------->
+    <br>
 </div>
 
 <style>
@@ -269,6 +270,7 @@
 
         .work-section {
             position: relative;
+            margin-bottom: 20px;
         }
 
         .link-card-grid {
@@ -284,6 +286,7 @@
             margin-left: auto;
             margin-right: auto;
             max-height: 50vh;
+            max-width: 100%;
             border-radius: 20px;
         }
 
@@ -314,7 +317,6 @@
         /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
         .flip-box {
             height: 50vh;
-            width: 100%;
             perspective: 1000px; /* Remove this if you don't want the 3D effect */
             margin-bottom: 70px;
             margin-top: 30px;
@@ -337,8 +339,7 @@
         /* Position the front and back side */
         .flip-box-front, .flip-box-back {
             position: absolute;
-            height: 50vh;
-            width: 100%;
+            max-height: 60vh;
             -webkit-backface-visibility: hidden; /* Safari */
             backface-visibility: hidden;
         }
@@ -349,10 +350,21 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+
+            border-radius: 20px;
+            width: 80%;
+            padding: 2em;
+            background: linear-gradient(rgba(61, 70, 99, 0.1), rgba(29, 28, 54, 0.1));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 2px solid rgba(148, 165, 217, 0.2);
+            border-left: 2px solid rgba(148, 165, 217, 0.3);
+            box-shadow: 20px 20px 20px rgba(9, 9, 9, 0.1);
         }
 
         /* Style the back side */
         .flip-box-back {
+            width: 80%;
             padding: 2em;
             text-align: left;
             font-size: 1em;
@@ -363,7 +375,7 @@
             background: linear-gradient(rgba(61, 70, 99, 0.1), rgba(29, 28, 54, 0.1));
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-top: 2px solid rgba(148, 165, 217, 0.3);
+            border-top: 2px solid rgba(148, 165, 217, 0.2);
             border-left: 2px solid rgba(148, 165, 217, 0.3);
             box-shadow: 20px 20px 20px rgba(9, 9, 9, 0.1);
         }
@@ -402,6 +414,10 @@
             margin: 0;
         }
 
+        .work-section{
+            position: relative;
+            margin-bottom: 50px;
+        }
         .link-card-grid {
             text-align: center;
             position: relative;
@@ -458,7 +474,7 @@
         /* Position the front and back side */
         .flip-box-front, .flip-box-back {
             position: absolute;
-            height: 50vh;
+            max-height: 60vh;
             width: 100%;
             -webkit-backface-visibility: hidden; /* Safari */
             backface-visibility: hidden;
@@ -467,6 +483,16 @@
         /* Style the front side (fallback if image is missing) */
         .flip-box-front {
             text-align: center;
+
+            border-radius: 20px;
+            width: 80%;
+            padding: 2em;
+            background: linear-gradient(rgba(61, 70, 99, 0.1), rgba(29, 28, 54, 0.1));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 2px solid rgba(148, 165, 217, 0.3);
+            border-left: 2px solid rgba(148, 165, 217, 0.3);
+            box-shadow: 20px 20px 20px rgba(9, 9, 9, 0.1);
         }
 
         /* Style the back side */
